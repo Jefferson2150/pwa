@@ -1,0 +1,56 @@
+<p>
+</p>
+<div class="container col-md-4">
+    <div class="card">
+        <div class="card-header">
+            <h3>Datos del Perfil</h3>
+        </div>
+        <div class="card-body">
+            <form action="">
+                <div class="form-group form-floating">
+                    <input [(ngModel)]="usuario.usua_dni" name="dni" type="text" maxlength="8" class="form-control" required disabled> 
+                    <label for="floatingInput">DNI:</label>
+                </div>
+                <p></p>
+                <div class="form-group form-floating">
+                    <input [(ngModel)]="usuario.usua_nombres" name="nombre" type="text" class="form-control" required>
+                    <label for="floatingInput">Nombre:</label>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="form-group form-floating col-md-6">
+                        <input [(ngModel)]="usuario.usua_apellpat" name="apellido_paterno" type="text" class="form-control" required>
+                        <label for="floatingInput">Apellido Paterno:</label>
+                    </div>
+                    <div class="form-group form-floating col-md-6">
+                        <input [(ngModel)]="usuario.usua_apellmat"  name="apellido_materno" type="text" class="form-control" required>
+                        <label for="floatingInput">Apellidos Materno:</label>
+                    </div>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="form-group form-floating col-md-6">
+                        <input [(ngModel)]="usuario.usua_celular" name="celular" type="text" class="form-control" required>
+                        <label for="floatingInput">Celular:</label>
+                    </div>
+                    <div class="form-group form-floating col-md-6">
+                        <input [(ngModel)]="usuario.usua_fijo"  name="fijo" type="text" class="form-control" required>
+                        <label for="floatingInput">N° Fijo:</label>
+                    </div>
+                </div>
+                <p></p>
+                <div class="form-group form-floating ">
+                    <input [(ngModel)]="usuario.usua_direccion" name="direccion" type="text" class="form-control">
+                    <label for="floatingInput">Dirección:</label>
+                </div>
+                <p></p>
+                <div class="form-group form-floating">
+                    <input [(ngModel)]="usuario.usua_email" name="correo" type="text" class="form-control" disabled>
+                    <label for="floatingInput">Correo/Usuario:</label>
+                </div>
+                <p></p>
+                <button (click)="Editar()" type="submit" class="btn btn-danger">Guardar Cambios</button>
+            </form>
+        </div>
+    </div>
+</div>

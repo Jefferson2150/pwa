@@ -1,0 +1,44 @@
+.container {
+    padding: 2%;
+    margin: 0%;
+    margin-left: 0%;
+}
+
+.left {
+    padding: 10px;
+    float: left;
+    width: 10%;
+    /* The width is 20%, by default */
+}
+
+.main {
+    padding: 5px;
+    float: left;
+    width: 75%;
+    /* The width is 60%, by default */
+}
+
+.right {
+    padding: 0px;
+    float: left;
+    width: 15%;
+    /* The width is 20%, by default */
+}
+
+@media screen and (max-width:750px) {
+    .left,
+    .main,
+    .right {
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}
+
+.col-xl-4 {
+    margin: 0;
+}
+
+.formulario-registro,
+.titulo {
+    padding: 0;
+}

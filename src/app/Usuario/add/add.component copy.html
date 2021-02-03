@@ -1,0 +1,119 @@
+<p>
+</p>
+<div class="container col-md-3">
+    <div class="card">
+        <div class="card-header">
+            <h3>Registro de Usuario</h3>
+        </div>
+        <div class="card-body">
+            <form action=""  ngNativeValidate #usuarioForm="ngForm">
+                <div class="form-group">
+                    <label for="">DNI:</label>
+                    <input [(ngModel)]="usuario.usua_dni" name="dni" type="text" minlength="8" maxlength="8" pattern="[0-9]{1,8}" trim="false" class="form-control" required #usua_dni="ngModel" (change)="validarDni()">
+                    <div class="alter alert-danger" *ngIf="usua_dni.invalid && (usua_dni.dirty || usua_dni.touched)">
+                        <div *ngIf="usua_dni.errors!.minlength">
+                            Ingrese un Dni correcto de 8 dígitos
+                        </div>
+                        <div *ngIf="usua_dni.errors!.pattern">
+                            Dni no debe contener letras o espacios en blanco
+                        </div>
+                        <div *ngIf="usua_dni.errors!.required">
+                            Dni es obligatorio
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Nombre:</label>
+                    <input [(ngModel)]="usuario.usua_nombres"  name="nombre" type="text" class="form-control" #usua_nombres="ngModel" required>
+                    <div class="alter alert-danger" *ngIf="usua_nombres.invalid && (usua_nombres.dirty || usua_nombres.touched)">
+                        <div *ngIf="usua_nombres.errors!.required">
+                            Nombre es obligatorio
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Apellido Paterno:</label>
+                        <input [(ngModel)]="usuario.usua_apellpat"  name="apellido_paterno" type="text" class="form-control" required #usua_apellpat="ngModel">
+                        <div class="alter alert-danger" *ngIf="usua_apellpat.invalid && (usua_apellpat.dirty || usua_apellpat.touched)">
+                            <div *ngIf="usua_apellpat.errors!.required">
+                                Apellido obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">Apellidos Materno:</label>
+                        <input [(ngModel)]="usuario.usua_apellmat"  name="apellido_materno" type="text" class="form-control" required #usua_apellmat="ngModel">
+                        <div class="alter alert-danger" *ngIf="usua_apellmat.invalid && (usua_apellmat.dirty || usua_apellmat.touched)">
+                            <div *ngIf="usua_apellmat.errors!.required">
+                                Apellido obligatorio
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="">Celular:</label>
+                        <input [(ngModel)]="usuario.usua_celular" name="celular" type="text" minlength="9" maxlength="9" pattern="[0-9]{1,9}" trim="false" class="form-control" required #usua_celular="ngModel">
+                        <div class="alter alert-danger" *ngIf="usua_celular.invalid && (usua_celular.dirty || usua_celular.touched)">
+                            <div *ngIf="usua_celular.errors!.minlength">
+                                Ingrese un celuar correcto de 9 dígitos
+                            </div>
+                            <div *ngIf="usua_celular.errors!.pattern">
+                                Celular no debe contener letras o espacios en blanco
+                            </div>
+                            <div *ngIf="usua_celular.errors!.required">
+                                Celular es obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="">N° Fijo:</label>
+                        <input [(ngModel)]="usuario.usua_fijo" name="fijo" type="text" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Dirección:</label>
+                    <input [(ngModel)]="usuario.usua_direccion" name="direccion" type="text" class="form-control" required #usua_direccion="ngModel">
+                    <div class="alter alert-danger" *ngIf="usua_direccion.invalid && (usua_direccion.dirty || usua_direccion.touched)">
+                        <div *ngIf="usua_direccion.errors!.required">
+                            Dirección es obligatorio
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Correo:</label>
+                    <input [(ngModel)]="usuario.usua_email" name="email" type="email" class="form-control" required email #usua_email="ngModel" (change)="validarEmail()">
+                    <div class="alter alert-danger" *ngIf="usua_email.invalid && (usua_email.dirty || usua_email.touched)">
+                        <div *ngIf="usua_email.errors!.email">
+                            Email debe tener un formato válido
+                        </div>
+                        <div *ngIf="usua_email.errors!.required">
+                            Email es requerido
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Contraseña:</label>
+                    <input [(ngModel)]="usuario.usua_clave" name="passwrod" type="password" class="form-control" #usua_clave="ngModel" required>
+                    <div class="alter alert-danger" *ngIf="usua_clave.invalid && (usua_clave.dirty || usua_clave.touched)">
+                        <div *ngIf="usua_clave.errors!.required">
+                            Contraseña es obligatorio
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="">Repetir contraseña:</label>
+                    <input [(ngModel)]="usuario.usua_clave" name="password_dos" type="password" class="form-control" #usua_clave="ngModel" required>
+                    <div class="alter alert-danger" *ngIf="usua_clave.invalid && (usua_clave.dirty || usua_clave.touched)">
+                        <div *ngIf="usua_clave.errors!.required">
+                            Contraseña es obligatorio
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <button (click)="GuardarUsuario(usuario)" type="submit" class="btn btn-danger" [disabled]="!usuarioForm.form.valid">Guardar</button>
+            </form>
+        </div>
+    </div>
+</div>

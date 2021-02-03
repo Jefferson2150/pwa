@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+    <header>
+        <app-header-movil></app-header-movil>
+    </header>
+    <div class="d-lg-none">
+        <form action="" id="formulario">
+            <div class="text-align:center">
+                <div class="card col-12 ">
+                    <div class="card-header text-center bg-dark" style="color:#FEFFFF">{{titulo}}</div>
+                    <div class="card-body">
+                        <form method="post">
+                            <div class="text-center">
+                                <label for="" style="font-size:12px;">Nos gusta verte nuevamente por aquí, ingresa a tu sesión y estaremos listos para ayudarte</label>
+                            </div>
+                            <p></p>
+                            <div class="form-group form-floating col-xl-12 col-sm-12 col-lg-12">
+                                <input [(ngModel)]="usuario.usua_email" type="text" class="form-control" name="usuario" id="usuario" placeholder="Usuario" autofocus required>
+                                <label for="floatingInput">Correo Electrónico</label>
+                            </div>
+                            <p></p>
+                            <div class="form-group form-floating col-sm-3 col-lg-12">
+                                <input [(ngModel)]="usuario.usua_clave" type="password" class="form-control " name="password" id="paswword" placeholder="Contraseña" required>
+                                <label for="floatingInput">Contraseña</label>
+                            </div>
+                            <div class="row">
+                                <div class="col-5 col-xs-4">
+                                    <label style="font-size:12px;" type="button" (click)="EditarPassword()" class="btn btn-link text-center col-12 d-flex justify-content-left">¿Olvide la clave?</label>
+                                </div>
+                                <div class="col-5 col-xs-5">
+                                    <label style="font-size:12px;" type="button" (click)="EditarPassword()" class="btn text-center col-12 d-flex justify-content-end">¿Primera vez aquí?</label>
+                                </div>
+                                <div class="col-2 col-xs-2">
+                                    <label style="font-size:12px;" type="button" (click)="EditarPassword()" class="btn btn-link text-center col-12 d-flex justify-content-end">Registrate</label>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form method="post">
+                                    <div class="d-grid gap-1 col-9 mx-auto">
+                                        <button class="btn btn-warning" (click)="login(usuario)" style="font-weight:bold; " type="button "><h3>INGRESAR</h3></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="d-none d-lg-block">
+        <div *ngIf="loginService.modal" class="modal" tabindex="-1" style="display: block;">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button (click)="cerrarModal()" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Modal body text goes here.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button (click)="cerrarModal()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

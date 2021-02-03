@@ -1,0 +1,28 @@
+<app-header-movil-web>
+</app-header-movil-web>
+<!-- 
+<div #map id="map">
+
+</div>
+-->
+<div class="container">
+    <div class="row col-xl-12 text-center">
+        <div class="form-group justify-content-center col-xl-12">
+            <label for="">AGREGAR NUEVA UBICACIÓN</label>
+            <button (click)="guardarNuevaUbicacion()" style="margin-left: 10px;" class="btn btn-warning">GUARDAR</button>
+        </div>
+    </div>
+
+    <agm-map (mapClick)="agregarMarcador($event)" [latitude]="lat" [longitude]="lng" [zoom]="15">
+        <agm-marker *ngFor="let marcador of marcadores; let i = index" [latitude]="marcador.lat" [longitude]="marcador.lng">
+            <agm-info-window>
+                <div>
+                    <label for="">{{marcador.titulo}}</label>
+                </div>
+                <div>
+                    <label for="">{{descripcion}}</label>
+                </div>
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+</div>

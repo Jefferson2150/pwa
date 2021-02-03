@@ -1,0 +1,151 @@
+.row {
+    margin-left: 0px;
+    padding: 0.3%;
+    margin-top: 1%;
+    height: 100%;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 0px;
+    height: 400px;
+    /* Should be removed. Only for demonstration */
+}
+
+.column-2 {
+    float: left;
+    width: 80%;
+    padding: 5px;
+    height: 620px;
+    margin-left: 0px;
+    /* Should be removed. Only for demonstration */
+}
+
+.column-3 {
+    padding: 0px;
+    float: left;
+    width: 15%;
+}
+
+.opciones {
+    height: 100px;
+}
+
+.servicios {
+    text-align: left;
+}
+
+.navbar {
+    width: 33vh;
+    padding: 0%;
+}
+
+.nav-item-movil {
+    height: 270px;
+    padding: 10%;
+}
+
+.nav-item {
+    padding: 3%;
+}
+
+.nav-item-bienvenido {
+    height: 80px;
+    background-color: gold;
+    padding: 10%;
+}
+
+@media screen and (max-width:1126px) {
+    .navbar {
+        width: 33vh;
+        height: 0vh;
+        margin: 0;
+        position: fixed;
+    }
+    .container {
+        margin: 0%;
+        padding: 0%;
+        margin-top: 0%;
+    }
+    .row {
+        padding: 0%;
+        margin-left: 0px;
+        margin-right: 0;
+        margin-top: 0%;
+    }
+}
+
+.container {
+    padding: 0;
+    margin: 0%;
+    margin-left: 0%;
+}
+
+.left {
+    padding: 10px;
+    float: left;
+    width: 10%;
+    /* The width is 20%, by default */
+}
+
+.main {
+    padding: 0;
+    float: left;
+    width: 75%;
+    height: auto;
+    /* The width is 60%, by default */
+}
+
+.navbar-toggler {
+    margin: 5%;
+}
+
+.navbar-nav {
+    padding-right: 0;
+}
+
+.right {
+    padding: 0px;
+    float: left;
+    width: 15%;
+    /* The width is 20%, by default */
+}
+
+@media screen and (max-width:768px) {
+    .left,
+    .main,
+    .right {
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
+    }
+    .main {
+        height: 100%;
+    }
+    .row {
+        height: auto;
+    }
+    .right {
+        height: 15%;
+    }
+    .container {
+        height: 100%;
+    }
+    .navbar-toggler {
+        width: 47px;
+        height: 34px;
+        background-color: black;
+        border: none;
+    }
+    .navbar-toggler .line {
+        width: 100%;
+        float: left;
+        height: 2px;
+        background-color: #fff;
+        margin-bottom: 5px;
+    }
+}
+
+.navbar-collapse {
+    background-color: #e9ecef;
+}

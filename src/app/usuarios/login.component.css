@@ -1,0 +1,236 @@
+#formulario {
+    width: 100%;
+    padding: 15px;
+    margin-top: 90px;
+    height: 480px;
+    text-align: center;
+}
+
+#formulario-2 {
+    width: 100%;
+    padding: 0px;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.modal {
+    width: 88%;
+    padding: 30px;
+    margin-top: 90px;
+    text-align: center;
+}
+
+.modal-body,
+.card-body-2,
+.column-1 {
+    padding: 0%;
+}
+
+.column-link {
+    float: left;
+    width: 18%;
+    padding-left: 0;
+    height: 400px;
+    /* Should be removed. Only for demonstration */
+}
+
+.modal-header {
+    padding: 1%;
+}
+
+.modal-content {
+    width: 130%;
+}
+
+.column-2 {
+    padding: 3%;
+}
+
+.abrir-modal {
+    background-color: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+
+.animacion {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    -webkit-animation-name: fadeIn;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.card,
+.card-body {
+    padding: 0%;
+}
+
+.main-container {
+    margin-top: 50px;
+}
+
+.container-footer {
+    margin-top: 40px;
+}
+
+.container {
+    margin-top: 39px;
+    min-height: calc(100vh -100px - 150px);
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.footer {
+    background-color: #ffffff;
+    color: #ffffff;
+    text-align: center;
+    font-size: 12px;
+    padding: 15px;
+    position: relative;
+    width: 100%;
+    height: 40px;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 5px;
+    height: 400px;
+    /* Should be removed. Only for demonstration */
+}
+
+.column-3 {
+    float: left;
+    width: 40%;
+    padding: 10px;
+    height: 400px;
+    /* Should be removed. Only for demonstration */
+}
+
+.column-4 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 200px;
+    /* Should be removed. Only for demonstration */
+}
+
+.column-5 {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 200px;
+    /* Should be removed. Only for demonstration */
+}
+
+.column-6 {
+    float: left;
+    height: 155px;
+    /* Should be removed. Only for demonstration */
+}
+
+.label-titulo {
+    margin-top: 80px;
+}
+
+.imagen-1 {
+    margin-top: 190px;
+}
+
+.imagen-2 {
+    margin-top: 67px;
+}
+
+.imagen-3 {
+    margin-top: 145px;
+}
+
+.imagen-4 {
+    margin-top: 20px;
+}
+
+
+/* Clear floats after the columns */
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.link-paginas {
+    width: 5%;
+}
+
+.link {
+    margin-top: 150px;
+    text-align: left;
+    background-color: gold;
+    height: 70px;
+    width: 30%;
+    border-top-right-radius: 40%;
+}
+
+.link-2 {
+    margin-top: 0px;
+    text-align: left;
+    background-color: gold;
+    height: 70px;
+    width: 30%;
+}
+
+.link-3 {
+    margin-top: 0px;
+    text-align: left;
+    background-color: gold;
+    height: 50px;
+    width: 30%;
+    border-bottom-right-radius: 40%;
+}
+
+.label-link {
+    padding-left: 20%;
+    background-color: gold;
+    height: 50px;
+    width: 70%;
+}
+
+.label-link-2 {
+    padding-left: 20%;
+    background-color: gold;
+    height: 50px;
+    width: 70%;
+}
+
+.label-link-3 {
+    padding-left: 20%;
+    background-color: gold;
+    height: 50px;
+    width: 70%;
+}

@@ -1,0 +1,179 @@
+<app-header-movil-web></app-header-movil-web>
+<p>
+</p>
+
+<div class="left d-none d-md-block">
+</div>
+
+<div class="main">
+
+    <div class="container col-sm-12 col-md-12 col-xl-12">
+        <div class="col-xl-6 titulo">
+            <h3 style="color: black;font-weight:bold;background-color: gold; border-radius: 10px;">¡BIENVENIDO(A) A FIVE!</h3>
+        </div>
+        <h6>Queremos encontrar el mejor servicio que se adpate a tus necesidades por favor completa tu perfil para cumplinar tu registro</h6>
+        <p></p>
+        <div class="col-sm-12 col-md-12 col-xl-12 formulario-registro">
+            <form action="" name="registro" ngNativeValidate #usuarioForm="ngForm">
+                <div class="row">
+                    <div class="form-group col-xl-6 col-md-6 input-group-sm">
+                        <label for="">Nombre*</label>
+                        <input [(ngModel)]="usuario.usua_nombres" name="usua_nombres" type="text" class="form-control" #usua_nombres="ngModel" required>
+                        <div class="alter alert-danger" *ngIf="usua_nombres.invalid && (usua_nombres.dirty || usua_nombres.touched)">
+                            <div *ngIf="usua_nombres.errors!.required">
+                                Nombre es obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3 col-xl-2 input-group-sm">
+                        <label for="">Apellido Pat*</label>
+                        <input [(ngModel)]="usuario.usua_apellpat" name="usua_apellpat" type="text" class="form-control" required #usua_apellpat="ngModel">
+                        <div class="alter alert-danger" *ngIf="usua_apellpat.invalid && (usua_apellpat.dirty || usua_apellpat.touched)">
+                            <div *ngIf="usua_apellpat.errors!.required">
+                                Apellido obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-3 col-xl-2  input-group-sm">
+                        <label for="">Apellidos Mat*</label>
+                        <input [(ngModel)]="usuario.usua_apellmat" name="usua_apellmat" type="text" class="form-control" required #usua_apellmat="ngModel">
+                        <div class="alter alert-danger" *ngIf="usua_apellmat.invalid && (usua_apellmat.dirty || usua_apellmat.touched)">
+                            <div *ngIf="usua_apellmat.errors!.required">
+                                Apellido obligatorio
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xl-6 col-md-6 input-group-sm">
+                        <label for="">Correo electrónico*</label>
+                        <input [(ngModel)]="usuario.usua_email" name="usua_email" type="email" class="form-control" required email #usua_email="ngModel" (change)="validarEmail()">
+                        <div class="alter alert-danger" *ngIf="usua_email.invalid && (usua_email.dirty || usua_email.touched)">
+                            <div *ngIf="usua_email.errors!.email">
+                                Email debe tener un formato válido
+                            </div>
+                            <div *ngIf="usua_email.errors!.required">
+                                Email es requerido
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-xl-2 col-md-3 input-group-sm">
+                        <label for="">Celular*</label>
+                        <input [(ngModel)]="usuario.usua_celular" name="usua_celular" type="text" minlength="9" maxlength="9" pattern="[0-9]{1,9}" trim="false" class="form-control" required #usua_celular="ngModel">
+                        <div class="alter alert-danger" *ngIf="usua_celular.invalid && (usua_celular.dirty || usua_celular.touched)">
+                            <div *ngIf="usua_celular.errors!.minlength">
+                                Ingrese un celuar correcto de 9 dígitos
+                            </div>
+                            <div *ngIf="usua_celular.errors!.pattern">
+                                Celular no debe contener letras o espacios en blanco
+                            </div>
+                            <div *ngIf="usua_celular.errors!.required">
+                                Celular es obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-xl-2 col-md-3 input-group-sm">
+                        <label for="">N° Fijo*</label>
+                        <input [(ngModel)]="usuario.usua_fijo" name="usua_fijo" type="text" maxlength="10" class="form-control" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xl-2 col-md-3 col-sm-4 input-group-sm">
+                        <label for="">Departamento*</label>
+                        <select [(ngModel)]="departamento.depa_id" name="depa_id" class="form-select" (change)="onSelect($any($event.target).value)">
+                        <option *ngFor="let departamento_item of departamentos" value="{{departamento_item.depa_id}}" id="codigo_departamento" #codigo_departamento>{{departamento_item.depa_nombre}}</option>
+                    </select>
+                    </div>
+                    <div class="form-group col-xl-2 col-md-3 col-sm-4 input-group-sm">
+                        <label for="">Ciudad*</label>
+                        <select [(ngModel)]="provincia.prov_id" name="prov_id" class="form-select" (change)="onSelectDistritos($any($event.target).value)">
+                        <option *ngFor="let provincia_item of provincias" value="{{provincia_item.prov_id}}" >{{provincia_item.prov_nombre}}</option>
+                    </select>
+                    </div>
+                    <div class="form-group col-xl-2 col-md-3 col-sm-4 input-group-sm">
+                        <label for="">Distrito*</label>
+                        <select [(ngModel)]="distrito.dist_id" name="dist_id" class="form-select">
+                        <option *ngFor="let distrito_item of distritos" value="{{distrito_item.dist_id}}" >{{distrito_item.dist_nombre}}</option>
+                    </select>
+                    </div>
+                    <div class="form-group col-xl-4 col-md-3 input-group-sm">
+                        <label for="">Dirección*</label>
+                        <input [(ngModel)]="usuario.usua_direccion" name="direccion" type="text" class="form-control" required #usua_direccion="ngModel">
+                        <div class="alter alert-danger" *ngIf="usua_direccion.invalid && (usua_direccion.dirty || usua_direccion.touched)">
+                            <div *ngIf="usua_direccion.errors!.required">
+                                Dirección es obligatorio
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xl-6 col-md-6 input-group-sm">
+                        <label for="">Ingresar tu ubicación por GPS</label>
+                        <button name="direccion" (click)="MapaUsuario()" type="button" class="btn btn-warning" style="margin-left: 10px" value="Geolocalización" required>Geolocalización</button>
+                    </div>
+                    <div class="form-group col-xl-4 col-md-6 input-group-sm">
+                        <label for="">DNI:</label>
+                        <input [(ngModel)]="usuario.usua_dni" id="usua_dni" name="usua_dni" type="text" minlength="8" maxlength="8" pattern="[0-9]{1,8}" trim="false" class="form-control" required #usua_dni="ngModel" (change)="validarDni()">
+                        <div class="alter alert-danger" *ngIf="usua_dni.invalid && (usua_dni.dirty || usua_dni.touched)">
+                            <div *ngIf="usua_dni.errors!.minlength">
+                                Ingrese un DNI correcto de 8 dígitos
+                            </div>
+                            <div *ngIf="usua_dni.errors!.pattern">
+                                Dni no debe contener letras o espacios en blanco
+                            </div>
+                            <div *ngIf="usua_dni.errors!.required">
+                                Dni es obligatorio
+                            </div>
+                        </div>
+                        <div class="alter alert-danger" style="display:none;">
+                            <div>
+                                Ingrese un DNI correcto de 8 dígitos
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-xl-6 col-md-6 input-group-sm">
+                        <label for="">Contraseña:</label>
+                        <input [(ngModel)]="usuario.usua_clave" name="usua_clave_1" type="password" class="form-control" #usua_clave="ngModel" required>
+                        <div class="alter alert-danger" *ngIf="usua_clave.invalid && (usua_clave.dirty || usua_clave.touched)">
+                            <div *ngIf="usua_clave.errors!.required">
+                                Contraseña es obligatorio
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group col-xl-4 col-md-6 input-group-sm">
+                        <label for="">Repetir contraseña:</label>
+                        <input [(ngModel)]="usuario.usua_clave" name="usua_clave_2" type="password" class="form-control" #usua_clave="ngModel" required>
+                        <div class="alter alert-danger" *ngIf="usua_clave.invalid && (usua_clave.dirty || usua_clave.touched)">
+                            <div *ngIf="usua_clave.errors!.required">
+                                Contraseña es obligatorio
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p></p>
+                <div class="row">
+                    <div class="form-group col-xl-6">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="gridCheck">
+                            <label style="font-size:10px;" class="form-check-label" for="gridCheck">
+                        He leido y acepto los <a href="">Términos</a>  y <a href="">Condiciones</a>
+                      </label>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                </p>
+                <button (click)="GuardarUsuario(usuario)" type="submit" class="btn btn-warning" [disabled]="!usuarioForm.form.valid">ENVIAR</button>
+            </form>
+        </div>
+    </div>
+    <app-footer-movil></app-footer-movil>
+</div>
+
+<div class="right d-none d-md-block">
+
+    <img src="../../assets/img/imagen-fondo-derecha.png" width="220" height="220" style="max-width:100%;width:100%;height:580px;">
+
+</div>

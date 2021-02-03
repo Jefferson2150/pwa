@@ -1,0 +1,24 @@
+<app-header-movil-web>
+</app-header-movil-web>
+<!-- 
+<div #map id="map">
+
+</div>
+-->
+<div class="container">
+    <div class="row col-xl-12 text-center">
+        <div class="form-group justify-content-center col-xl-12">
+            <label for="">UBICACIÓN DEL ESPECIALISTA</label>
+        </div>
+    </div>
+
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="15">
+        <agm-marker *ngFor="let marcador of marcadores; let i = index" [latitude]="marcador.lat" [longitude]="marcador.lng">
+            <agm-info-window>
+                <div>
+                    <label for="">{{marcador.titulo}}</label>
+                </div>
+            </agm-info-window>
+        </agm-marker>
+    </agm-map>
+</div>

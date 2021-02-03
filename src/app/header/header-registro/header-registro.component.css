@@ -1,0 +1,26 @@
+.header {
+    color: #ffffff;
+    padding: 0px;
+    width: 100%;
+    height: auto;
+}
+
+.movil {
+    padding: 0%;
+}
+
+.navbar {
+    padding: 0%;
+}
+
+.navbar-collapse {
+    padding: 1%;
+}
+
+.registro {
+    margin-bottom: 0;
+}
+
+.buscador {
+    padding: 0;
+}

@@ -1,0 +1,116 @@
+.row {
+    margin-left: 0px;
+    padding: 0.3%;
+    margin-top: 1%;
+}
+
+.column {
+    float: left;
+    width: 20%;
+    padding: 0px;
+    height: 400px;
+    /* Should be removed. Only for demonstration */
+}
+
+.column-2 {
+    float: right;
+    width: 60%;
+    padding: 5px;
+    height: 400px;
+    margin-left: 20px;
+    /* Should be removed. Only for demonstration */
+}
+
+.column-3 {
+    padding: 0px;
+    float: left;
+    width: 15%;
+}
+
+.opciones {
+    height: 80px;
+}
+
+.navbar {
+    width: 33vh;
+    padding: 0%;
+}
+
+.nav-item-movil {
+    height: 270px;
+    padding: 10%;
+}
+
+.nav-item {
+    padding: 3%;
+}
+
+.nav-item-bienvenido {
+    height: 80px;
+    background-color: gold;
+    padding: 10%;
+}
+
+@media screen and (max-width:1126px) {
+    .navbar {
+        width: 33vh;
+        height: 0vh;
+        margin: 0;
+        position: fixed;
+    }
+    .container {
+        margin: 0%;
+        padding: 0%;
+        margin-top: 0%;
+    }
+    .row {
+        padding: 0%;
+        margin-left: 0px;
+        margin-right: 0;
+        margin-top: 0%;
+    }
+}
+
+.container {
+    padding: 0;
+    margin: 0%;
+    margin-left: 0%;
+}
+
+.left {
+    padding: 10px;
+    float: left;
+    width: 10%;
+    /* The width is 20%, by default */
+}
+
+.main {
+    padding: 0;
+    float: left;
+    width: 75%;
+    /* The width is 60%, by default */
+}
+
+.navbar-toggler {
+    margin: 5%;
+}
+
+.navbar-nav {
+    padding-right: 0;
+}
+
+.right {
+    padding: 0px;
+    float: left;
+    width: 15%;
+    /* The width is 20%, by default */
+}
+
+@media screen and (max-width:750px) {
+    .left,
+    .main,
+    .right {
+        width: 100%;
+        /* The width is 100%, when the viewport is 800px or smaller */
+    }
+}

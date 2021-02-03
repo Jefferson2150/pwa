@@ -1,0 +1,43 @@
+<!--
+<p>servicio-especialidad works! </p>
+<option *ngFor="let espc of especialidades" value="">{{espc.espe_nombre}}</option>
+
+-->
+
+<app-header-movil-web></app-header-movil-web>
+<div class="left d-none d-md-block">
+</div>
+<div class="main">
+    <div class="container-sm container col-sm-12 col-md-6 col-xl-12 col-12">
+
+        <div class="row">
+            <div class="column">
+
+            </div>
+            <div class="column-2">
+                <div class="row">
+                    <div class="col-xl-12 d-none d-xl-block">
+                        <h3 style="color: black;font-weight:bold;background-color: gold; border-radius: 10px;">¡BIENVENIDO(A) {{nombre_usuario}}!</h3>
+                    </div>
+                </div>
+                <div class="col-xl-12 text-center">
+                    <label for="">Seleccione su Especialista</label>
+                </div>
+                <div class="row">
+                    <p></p>
+                    <div class="col-xl-4 col-sm-6 col-6 text-center opciones" *ngFor="let especialistas_especialidad of especialistas">
+                        <img [routerLink]="['/informacion-especialista',especialistas_especialidad.usua_id]" src="../../assets/img/principal_01.png" width="100" height="100" style="max-width:100%;width:auto;height:auto;">
+                        <button [routerLink]="['/informacion-especialista',especialistas_especialidad.usua_id]" type="button" class="btn btn-black" value="{{especialistas_especialidad.usua_id}}" for="">{{especialistas_especialidad.usua_nombres}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-footer-movil></app-footer-movil>
+
+<div class="right d-none d-xl-block">
+    <img src="../../assets/img/imagen-fondo-derecha.png" width="220" height="220" style="max-width:100%;width:100%;height:580px;">
+
+</div>
